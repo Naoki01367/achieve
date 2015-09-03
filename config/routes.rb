@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-root to: "top#index"
+  root to: "top#index"
   resources :blogs
-  get 'forms', to: 'forms#index' 
+  get 'inquiry', to: 'inquiry#index'
+  post 'inquiry/confirm', to: 'inquiry#confirm'
+  post 'inquiry/thanks', to: 'inquiry#thanks'
 end

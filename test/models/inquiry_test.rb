@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TopControllerTest < ActionController::TestCase
+class InquiryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
