@@ -1,79 +1,99 @@
-body { 
-  margin: 0; 
-  font-family: "メイリオ", Meiryo,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif; 
+html,body{
+  width:100%;
+  height:100%;
+  margin:0;
+  background-color:#F5F5F5;
 }
 
-.boxA:after { 
-  content: ""; 
-  display: block; 
-  clear: both 
-} 
-
-.box1 { 
-  float: left; 
-  width: auto 
-} 
-
-.box2 { 
-  float: right; 
-  width: auto 
+#header{
+  width:100%;
+  height:50px;
+  margin:0;
+  background-color:#333333;
+  box-shadow:0px 2px 6px 0px rgba(0,0,0,0.15);
 }
 
-/* サイト名 */ 
-.site h1 a { 
-  color: white; 
-  text-decoration: none 
-} 
-
-.site h1 { 
-  margin: 0; 
-  font-size: 30px 
+.header_title{
+  display:block;
+  height:50px;
+  margin:0;
+  float:left;
 }
 
-/* ナビゲーション */ 
-.menu ul { 
-  margin: 0; 
-  padding: 0; 
-  list-style: none 
+.header_title > h1{
+  margin:9px 0 9px 20px;
+  font-size:28px;
+  font-family:georgia;
 }
 
-.menu li a { 
-  display: block; 
-  padding: 10px 15px; 
-  color: white; 
-  font-size: 14px; 
-  text-decoration: none 
-} 
-.menu li a:hover { 
-  background-color: #eeeeee 
-} 
-
-.menu ul:after { 
-  content: ""; 
-  display: block; 
-  clear: both 
-} 
-.menu li { 
-  float: left; 
-  width: auto 
+.header_title > h1 >a{
+  text-decoration:none;
+  color:white;
 }
+
+.header_title > h1 >a:hover{
+  color:silver;
+}
+
+.header_nav{
+  display:block;
+  height:50px;
+  margin:0;
+  float:right;
+}
+
+.header_nav > ul{
+  margin:0 40px 0 0;
+  height:50px;
+  list-style:none;
+}
+
+.header_nav > ul >li{
+  float:left;
+  margin-left:15px;
+}
+
+.header_nav > ul> li >a{
+  display:inline-block;
+  padding:11px 0 13px 0;
+  border-top:solid 2px #333333;
+  color:white;
+  text-decoration:none;
+  text-align:center;
+}
+
+.header_nav >ul >li >a:hover{
+  border-top:solid 2px white;
+  color:silver;
+}
+
 
 /* ヘッダー画像 */ 
+
+#image{
+  width:100%;
+  margin:0 0 20px 0;
+}
+
 .topimg { 
   width: 100%; 
   vertical-align: bottom 
 }
 
-.box5 { 
-  padding-top: 10px; 
-  padding-bottom: 10px; 
-  background-color: #dddddd 
+#footer{ 
+  position:absolute;
+  bottom:0;
+  margin-top:20px;
+  width:100%;
+  height:30px;
+  background-color:white;
+  box-shadow:6px 0px 0px 1px rgba(0,0,0,0.15);
 }
 
-.boxA { 
-  margin:0;
-  padding:0;
-  background-color:black;
+#footer > p{
+  text-align:center;
+  color:gray;
+  margin:3px 0;
 }
 
 .box4 { 
