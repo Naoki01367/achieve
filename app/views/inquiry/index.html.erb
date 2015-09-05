@@ -1,4 +1,3 @@
-<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
   <div id="header">
     <div class="header_title">
       <h1><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">Dive into Code</a></h1>
@@ -12,6 +11,7 @@
   </div><!-- header -->
   <div id="image">
     <%= image_tag("inquiry.jpg", class: "topimg") %> 
+    <!-- <p>CONTACT US</p> -->
   </div><!-- image -->
   <div id="inquiry_header">
     <h1>お問い合わせ</h1>
@@ -27,7 +27,7 @@
       </ul>
     </div>
     <% end %>
- 
+<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
     <table class="table">
       <tr>
         <th>お名前</th>
@@ -43,8 +43,7 @@
       </tr>
     </table>
     <%= f.submit '確認', class: 'btn btn-primary' %>
-    <% end %>
-    
+<% end %>
   </div><!-- inquiry -->
   <div id="footer">
     <p>Copyright &copy; 2015 Dive into Code All Rights Reserved.</p> 
