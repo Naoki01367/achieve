@@ -1,50 +1,46 @@
+<div id="wrapper"> 
   <div id="header">
-    <div class="header_title">
-      <h1><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">Dive into Code</a></h1>
-    </div><!-- header_title -->
-    <div class="header_nav">
-      <ul>
-        <li><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">TOP</a></li>
-        <li><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/inquiry/">CONTACT US</a></li>
+      <div class="header_title">
+        <h1><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">Dive into Code</a></h1>
+      </div><!-- header_title -->
+      <div class="header_nav">
+        <ul>
+          <li><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">TOP</a></li>
+          <li><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/inquiry/">CONTACT US</a></li>
+        </ul>
+      </div><!-- header_nav -->
+    </div><!-- header -->
+    <div id="image">
+      <%= image_tag("inquiry.jpg", class: "topimg") %> 
+      <!-- <p>CONTACT US</p> -->
+    </div><!-- image -->
+    <div id="inquiry_header">
+      <h1>お問い合わせ</h1>
+    </div><!-- inquiry_header -->
+  <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+    <div id="inquiry">
+      <% if @inquiry.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <strong>入力内容にエラーがあります</strong>
+        <ul>
+          <% @inquiry.errors.each do |attr, msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <ul class="table">
+        <li class="title">お名前</li>
+        <li><%= f.text_field :name %></li>
+        <li class="title">メールアドレス</li>
+        <li><%= f.text_field :email %></li>
+        <li class="title">お問い合わせ内容</li>
+        <li><%= f.text_area :message %></li>
       </ul>
-    </div><!-- header_nav -->
-  </div><!-- header -->
-  <div id="image">
-    <%= image_tag("inquiry.jpg", class: "topimg") %> 
-    <!-- <p>CONTACT US</p> -->
-  </div><!-- image -->
-  <div id="inquiry_header">
-    <h1>お問い合わせ</h1>
-  </div><!-- inquiry_header -->
-  <div id="inquiry">
-    <% if @inquiry.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <strong>入力内容にエラーがあります</strong>
-      <ul>
-        <% @inquiry.errors.each do |attr, msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% end %>
-<%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
-    <table class="table">
-      <tr>
-        <th>お名前</th>
-        <td><%= f.text_field :name %></td>
-      </tr>
-      <tr>
-        <th>メールアドレス</th>
-        <td><%= f.text_field :email %></td>
-      </tr>
-      <tr>
-        <th>お問い合わせ内容</th>
-        <td><%= f.text_area :message %></td>
-      </tr>
-    </table>
-    <%= f.submit '確認', class: 'btn btn-primary' %>
-<% end %>
-  </div><!-- inquiry -->
-  <div id="footer">
-    <p>Copyright &copy; 2015 Dive into Code All Rights Reserved.</p> 
-  </div><!-- footer -->
+      <%= f.submit '確認', class: 'btn btn-primary' %>
+  <% end %>
+    </div><!-- inquiry -->
+    <div id="footer">
+      <p>Copyright &copy; 2015 Dive into Code All Rights Reserved.</p> 
+    </div><!-- footer -->
+</div><!-- wrapper -->

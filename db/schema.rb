@@ -23,30 +23,10 @@ ActiveRecord::Schema.define(version: 20150905084033) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "forms", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "homes", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "inquiries", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tops", force: :cascade do |t|
-    t.string   "titile"
-    t.text     "content"
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,8 +1,12 @@
 html,body{
-  width:100%;
+  position:relative;
   height:100%;
   margin:0;
   background-color:#F5F5F5;
+}
+
+.notice,.alert{
+  margin:0;
 }
 
 #header{
@@ -181,11 +185,4 @@ html,body{
   color: #ffffff; 
   text-align: center; 
   text-decoration: none 
-}
-
-.copyright p { 
-  margin: 0; 
-  text-align:center; 
-  color: #666666; 
-  font-size: 14px 
 }
