@@ -1,3 +1,4 @@
+<div id="wrapper">
 <div id="header">
   <div class="header_title">
     <h1><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">Dive into Code</a></h1>
@@ -5,40 +6,45 @@
   <div class="header_nav">
     <ul>
       <li><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">TOP</a></li>
-      <li><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/inquiry/">CONTACT US</a></li>
+      <li><%= link_to"CONTACT US",inquiry_path %></li>
+      <li>    <% if user_signed_in? %> 
+      <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li> 
+    <% else %>
+      <li><%= link_to "LOGIN", new_user_session_path %></li> 
+    <% end %>
     </ul>
   </div><!-- header_nav -->
 </div><!-- header -->
 <div id="image">
   <%= image_tag("inquiry.jpg", class: "topimg") %> 
 </div><!-- image -->
-<div class="page-header">
-  <h1>お問い合わせ</h1>
+<div id="inquiry-header">
+  <h1>内容の確認</h1>
 </div>
- 
-<%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
-  <table class="table">
-    <tr>
-      <th>名前</th>
-      <td>
-        <%= f.hidden_field :name %>
-        <%= @inquiry.name %>
-      </td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td>
-        <%= f.hidden_field :email %>
-        <%= @inquiry.email %>
-      </td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td>
-        <%= f.hidden_field :message %>
-        <%= simple_format(@inquiry.message) %>
-      </td>
-    </tr>
-  </table>
-  <%= f.submit '送信', :class => 'btn btn-primary' %>
+
+<%= form_for @inquiry, url:inquiry_thanks_path do |f| %>
+<ul class="table">
+  <li>お名前</li>
+  <li><%= f.hidden_field :name %></li>
+  <li><%= @inquiry.name %></li>
+  <li>メールアドレス</li>
+  <li><%= f.hidden_field :email %></li>
+  <li><%= @inquiry.email %></li>
+  <li>お問い合わせ内容</li>
+  <li><%= f.hidden_field :message %></li>
+  <li><%= simple_format(@inquiry.message) %></li>
+</ul>
+
+<div class="btn">
+<%= f.submit'送信', class:'btn btn-primary' %>
+</div>
 <% end %>
+  <div id="footer">
+    <div id="t-footer">
+      <p>Dive into Code By Naoki Sugiyama</p>
+    </div>
+    <div id="b-footer">
+      <p>Copyright &copy; 2015 Dive into Code All Rights Reserved.</p>
+    </div>
+  </div>
+</div>

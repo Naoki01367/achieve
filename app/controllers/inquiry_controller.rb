@@ -1,6 +1,5 @@
 class InquiryController < ApplicationController
-  before_filter :authenticate_user!
-  def index
+  def new
     @inquiry = Inquiry.new
   end
 
@@ -8,17 +7,16 @@ class InquiryController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.valid?
     else
-      render :action => 'new'
+      render action: 'new'
     end
   end
   
-    private
+    def thanks
+    @inquiry = Inquiry.create(inquiry_params)
+  end
+  
+  private
   def inquiry_params
     params.require(:inquiry).permit(:name, :email, :message)
   end
-
-  def thanks
-    @inquiry = Inquiry.create(inquiry_params)
-  end
-
 end

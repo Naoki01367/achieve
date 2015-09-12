@@ -1,0 +1,59 @@
+<div id="wrapper">
+<div id="header">
+  <div class="header_title">
+    <h1><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">Dive into Code</a></h1>
+  </div><!-- header_title -->
+  <div class="header_nav">
+    <ul>
+      <li><a href="http://naokisugiyama-150802-118268.nitrousapp.com:3000/">TOP</a></li>
+      <li><%= link_to"CONTACT US",inquiry_path %></li>
+      <li>    <% if user_signed_in? %> 
+      <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li> 
+    <% else %>
+      <li><%= link_to "LOGIN", new_user_session_path %></li> 
+    <% end %>
+    </ul>
+  </div><!-- header_nav -->
+</div><!-- header -->
+<div id="article">
+<div id="image">
+  <%= image_tag("inquiry.jpg", class: "topimg") %> 
+</div><!-- image -->
+<%= form_for @inquiry, url:inquiry_confirm_path do |f| %>
+<div id="inquiry-header">
+  <h1>お問い合わせ</h1>
+</div>
+
+<% if @inquiry.errors.any? %>
+<div id="error_explanation">
+  <h2>入力された内容にエラーがあります。</h2>
+  <ul>
+    <% @inquiry.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<ul class="table">
+  <li>お名前<span class="text-danger"></span></li>
+  <li><%= f.text_field :name %></li>
+  <li>メールアドレス<span class="text-danger"></span></li>
+  <li><%= f.text_field :email %></li>
+  <li>お問い合わせ内容<span class="text-danger"></span></li>
+  <li><%= f.text_area :message %></li>
+  <div class="btn">
+<%= f.submit'確認',class:'btn btn-primary' %>
+  </div>
+  </ul>
+<% end %>
+</div>
+<div id="footer">
+  <div id="t-footer">
+    <p>Dive into Code By Naoki Sugiyama</p>
+  </div>
+  <div id="b-footer">
+    <p>Copyright &copy; 2015 Dive into Code All Rights Reserved.</p>
+  </div>
+</div>
+</div>
