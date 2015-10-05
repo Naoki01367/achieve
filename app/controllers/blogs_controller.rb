@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @blog = Blog.find(params[:id])
   end
 
   def new
@@ -13,6 +14,7 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find(params[:id])
   end
 
   def create
@@ -55,6 +57,6 @@ class BlogsController < ApplicationController
     end
   
     def blog_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:title, :content, :name, :user_id)
     end
 end

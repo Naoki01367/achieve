@@ -30,7 +30,7 @@ html,body{
 
 .header_title{
   display:block;
-  height:50px;
+  height:65px;
   margin:0;
   float:left;
 }
@@ -52,7 +52,7 @@ html,body{
 
 .header_nav{
   display:block;
-  height:50px;
+  height:65px;
   margin:0;
   float:right;
 }
@@ -70,7 +70,7 @@ html,body{
 
 .header_nav > ul> li >a{
   display:inline-block;
-  padding:14px 0 16px 0;
+  padding:21px 0 24px 0;
   border-top:solid 3px white;
   color:black;
   text-decoration:none;
@@ -82,12 +82,20 @@ html,body{
   color:silver;
 }
 
+.jumbotron{
+  background:#000 url("achieve.jpg")center center;
+  background-size:cover;
+  h1,p{
+    color:white;
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
 #article{
   margin:0;
   padding-bottom:122px;
 }
-
-/* ヘッダー画像 */ 
 
 #image{
   width:100%;
@@ -97,6 +105,14 @@ html,body{
 .topimg { 
   width: 100%; 
   vertical-align: bottom 
+}
+
+#login{
+  width:350px;
+  margin:85px auto 20px auto;
+  padding:10px;
+  border:1px solid #e1e1e1;
+  border-radius:5px;
 }
 
 #error_explanation{
@@ -251,10 +267,6 @@ html,body{
   text-decoration: none 
 }
 
-.btn{
-  display:block;
-  margin:0 auto;
-}
 
 #footer{
   position:absolute;
