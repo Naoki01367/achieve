@@ -57,3 +57,4 @@ gem'bootstrap-social-rails'
 
 gem'rspec-rails'
 gem'capybara'
+gem 'rambulance'
