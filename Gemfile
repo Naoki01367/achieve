@@ -54,3 +54,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
 gem'bootstrap-social-rails'
+
+gem'rspec-rails'
+gem'capybara'
