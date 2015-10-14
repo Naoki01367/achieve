@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   post 'inquiry/confirm', to: 'inquiry#confirm'
   post 'inquiry/thanks', to: 'inquiry#thanks'
   
-  get'about' => 'about#company_overview'
+  get 'about' => 'about#company_overview'
 end

@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-blog = BLog.create([{name:'naoki','sugiyama'}])
+blog = Blog.create([{title:'hogehoge'},{content:'hugahuga'}])
