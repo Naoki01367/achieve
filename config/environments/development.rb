@@ -51,3 +51,4 @@ Rails.application.configure do
     :password => 'naokisfc32'
   }
 end
+BetterErrors::Middleware.allow_ip!'54.251.49.8'
